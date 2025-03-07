@@ -1,4 +1,8 @@
-export default function Button({ children, theme }) {
-  const className = "button-" + theme;
-  return <button className={className}>{children}</button>;
+import { useContext } from 'react'
+import { ThemeContext } from '../App'
+
+export default function Button({ children }) {
+	const { theme, setTheme } = useContext(ThemeContext)
+	const className = 'button-' + theme
+	return <button className={className}>{children}</button>
 }
